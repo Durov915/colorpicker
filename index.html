@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://markosth09.gallerycdn.vsassets.io/extensions/markosth09/color-picker/1.0.0/1645874875696/Microsoft.VisualStudio.Services.Icons.Default">
+
+    <title>Color Picker</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(235, 222, 197);
+
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container-color {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            width: 200px;
+            border: 4px solid lightgrey;
+            border-radius: 10px;
+        }
+
+        input[type="color"] {
+            border: none;
+            background-color: transparent;
+            width: 318px;
+            height: 300px;
+            outline: none;
+            filter: drop-shadow(0px 0px 15px rgb(0, 157, 255));
+        }
+
+        #color-picker::-webkit-color-swatch {
+            border-radius: 100%;
+        }
+
+        .container-color {
+            position: relative;
+            text-align: center;
+            width: 280px;
+            height: 300px;
+            border-radius: 74% 82% 70% 88%;
+            display: table;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, .9);
+            cursor: pointer;
+            z-index: 1;
+            transition: .5s;
+            color: #227093;
+        }
+
+        .container-color:before,
+        .container-color:after {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: RotateDiv 5s linear infinite;
+        }
+
+        .container-color:before {
+            border-radius: 130% 151% 189% 166%;
+            background-color: rgba(255, 255, 255, .7);
+            animation-delay: 0s;
+            transition: .5s;
+        }
+
+        .container-color:after {
+            border-radius: 145% 86% 80% 90%;
+            background-color: rgba(255, 255, 255, .3);
+            animation-delay: .2s;
+            transition: .5s;
+        }
+
+        .container-color:hover {
+            background-color: rgba(9, 113, 195, .8);
+            color: #fff;
+        }
+
+        .container-color:hover:after {
+            background-color: rgba(9, 113, 195, .7);
+        }
+
+        .container-color:hover:before {
+            background-color: rgba(9, 113, 195, .3);
+        }
+
+        .container-color div {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .container-color div h2 {
+            font-size: 25px;
+        }
+
+        .container-color div p {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        @keyframes RotateDiv {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .container-color {
+            position: relative;
+            text-align: center;
+            width: 280px;
+            height: 300px;
+            border-radius: 74% 82% 70% 88%;
+            display: table;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, .9);
+            cursor: pointer;
+            z-index: 1;
+            transition: .5s;
+            color: #227093;
+            overflow: hidden;
+          
+        }
+
+        #value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-family: monospace;
+            transform: translate(-50%, -50%);
+            animation: rotateText 2s linear infinite;
+            font-size: 2.4vh;
+
+        }
+
+        @keyframes rotateText {
+            0% {
+                color: #A0D468;
+            }
+
+            20% {
+                color: #4FC1E9;
+            }
+
+            40% {
+                color: #FFCE54;
+            }
+
+            60% {
+                color: #FC6E51;
+            }
+
+            80% {
+                color: #ED5565;
+            }
+
+            100% {
+                color: #AC92EC;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-color">
+            <input type="color" id="color-picker" />
+            <span id="value">Pick Color You Like</span>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
